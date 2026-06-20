@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>여우비뉴스마을 맵 · 260620</title>
+<style>
+  :root{--ink:#23201c;--soft:#5c554c;--line:#e4ddcf;--paper:#faf7f0;--card:#fff;--accent:#9a6a3a;--accent2:#3f6b54;
+    --mono:'SF Mono',ui-monospace,Menlo,monospace;--kr:'Apple SD Gothic Neo',-apple-system,'Malgun Gothic',sans-serif;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--kr);line-height:1.72;font-size:16px;-webkit-text-size-adjust:100%;}
+  .wrap{max-width:760px;margin:0 auto;padding:34px 18px 90px;}
+  header{text-align:center;margin-bottom:26px;}
+  h1{font-size:23px;margin:0 0 6px;}
+  .tag{font-size:13.5px;color:var(--soft);}
+  .stamp{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:#fff;background:var(--accent2);border-radius:20px;padding:3px 12px;}
+  .rule{width:44px;height:2px;background:var(--accent);border:0;margin:18px auto;opacity:.65;}
+  h2{font-size:18px;margin:36px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+  h2 .num{color:var(--accent);font-weight:700;margin-right:8px;}
+  p{margin:0 0 12px;} .small{font-size:14px;color:var(--soft);}
+  ul{margin:0 0 14px;padding-left:0;list-style:none;}
+  li{padding:5px 0 5px 16px;position:relative;font-size:14.5px;}
+  li::before{content:"·";position:absolute;left:3px;color:var(--accent);font-weight:700;}
+  b{color:var(--ink);} .k{color:var(--accent2);font-weight:700;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 12px;}
+  code{font-family:var(--mono);font-size:12.5px;color:var(--accent);background:#f1e9da;border-radius:5px;padding:1px 6px;}
+
+  /* producing map diagram */
+  .map{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;}
+  .box{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0 auto;text-align:center;max-width:520px;background:#fffdf8;}
+  .box.anchor{border-color:var(--accent);background:#fbf3e7;}
+  .box .bt{font-weight:700;font-size:14px;} .box .bs{font-size:12.5px;color:var(--soft);}
+  .box code{font-size:11px;}
+  .arr{text-align:center;color:var(--accent);font-size:15px;margin:6px 0;}
+  .split{display:flex;gap:10px;max-width:520px;margin:0 auto;}
+  .split .box{flex:1;}
+  .side{display:flex;gap:10px;max-width:520px;margin:10px auto 0;}
+  .side .box{flex:1;background:#f7f3ea;}
+  .loopnote{text-align:center;font-size:12px;color:var(--accent2);margin-top:8px;font-family:var(--mono);}
+
+  .ag{display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);align-items:flex-start;}
+  .ag:last-child{border-bottom:0;}
+  .ag .c{flex:0 0 80px;font-family:var(--mono);font-weight:700;font-size:12px;color:var(--accent);}
+  .ag .d{flex:1;font-size:14px;}
+  .mk{color:var(--accent2);} .ex{color:#a85;}
+
+  pre{background:#2c2823;color:#f3ecdd;border-radius:11px;padding:14px;overflow-x:auto;font-size:12px;line-height:1.6;font-family:var(--mono);margin:0;}
+  .done{color:var(--accent2);font-weight:700;}
+  .principle{text-align:center;font-weight:600;margin:26px 0 4px;}
+  .nowhere{text-align:center;font-size:14px;color:var(--soft);}
+
+  .dia .lead{font-size:13.5px;color:var(--soft);font-style:italic;margin-bottom:14px;}
+  .qa{border-left:2px solid var(--line);padding:7px 0 7px 12px;margin:0 0 9px;}
+  .qa .me{font-size:13.5px;color:var(--ink);}
+  .qa .cl{font-size:13.5px;color:var(--soft);}
+  .qa .seed{font-size:12px;color:var(--accent);margin-top:1px;}
+  .qa b{font-family:var(--mono);font-size:11px;}
+  .qa .me b{color:var(--accent2);} .qa .cl b{color:var(--accent);} .qa .seed b{color:var(--accent);}
+  .grow{font-size:12.5px;color:var(--soft);margin-top:10px;text-align:center;font-style:italic;}
+  .pub{margin-top:30px;padding:16px;background:#fff;border:1px solid var(--line);border-radius:12px;text-align:center;font-size:14px;}
+  .pub .who{font-weight:700;} .pub .sub{font-size:12.5px;color:var(--soft);margin:4px 0 9px;}
+  .pub a{color:var(--accent);text-decoration:none;font-weight:600;}
+
+  .closing{text-align:center;margin:34px auto 6px;max-width:520px;font-size:15px;color:var(--ink);font-style:italic;line-height:1.8;}
+  .closing::before,.closing::after{content:"";display:block;width:34px;height:1px;background:var(--accent);opacity:.5;margin:14px auto;}
+
+  .endorse{text-align:center;max-width:540px;margin:18px auto 0;font-size:13.5px;color:var(--soft);
+    border-top:1px dashed var(--line);padding-top:14px;}
+  .endorse b{color:var(--accent2);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>여우비뉴스마을 · 프로듀싱 맵</h1>
+    <div class="tag">Yeoubi (Sunshower · USIS Liberty News) Village · 촌장 윤정배</div>
+    <div class="stamp">기록 · 260620 · 오늘까지의 전체</div>
+    <hr class="rule">
+  </header>
+
+  <p>1967년 6월, 어느 아침에 사라진 창원 상남 공보원 관사마을(USIS 리버티뉴스)을 <b>기억 속에서 되살리는 디지털 빌리지</b>. 그 한 해의 길과 엔진을, 오늘까지 정한 대로 적어 둔다.</p>
+
+  <h2><span class="num">1</span>기준점 — 불변의 닻</h2>
+  <div class="card">
+    <ul>
+      <li><span class="k">장소</span> 창원군 상남면 용지리 = 공보원 관사마을(일식 목조 약 5채·20여 세대). 지금의 용지동·여우비공원·용지호수 자리. 좌표의 닻 = <b>용지못(용지호수)</b>.</li>
+      <li><span class="k">시간</span> 리버티뉴스 1952.5.16~<b>1967.6.1</b>(마지막 호). 그해 6월 그 아침, 마을이 비고 한 아이만 남음. 60주년 = <b>2027.6.1</b>.</li>
+      <li><span class="k">사람</span> 나·재순·덕길·수용. 선친 <b>윤두원</b>(현상실). 현상실 반장 김형환=재순의 부친.</li>
+      <li><span class="k">화자</span> 늙은 촌장 윤정배의 1인칭 기억(소나기마을 김종회 모델). 회상체가 아니라 <b>현재형</b>.</li>
+      <li><span class="k">시점</span> 지금 여기 — 그때도 지금, 지금도 지금. 무심·즉심·현행 / HHI.</li>
+      <li><span class="k">관객·톤</span> 7~13세. 향수·분석 아닌 <b>경이와 우정</b>.</li>
+      <li><span class="k">모티프</span> 여우비(Sunshower) — 그 땅의 진짜 날씨이자 몽환포영. 소나기와 한 결.</li>
+      <li><span class="k">모델</span> 소나기마을(화자·체험)·토지(마을+가문)·소나기(한순간). 우리 색 나오면 갈아입음.</li>
+    </ul>
+    <p class="small">※ AAG-DIR(편집장)이 <b>매 호 먼저 이 기준점을 복기</b>하고 작업을 건다.</p>
+  </div>
+
+  <h2><span class="num">2</span>접근 층위</h2>
+  <ul>
+    <li><b>평론 + 기억</b> — 필름을 작품으로 보고(평론), 그 장면이 증언을 깨운다(기억). 필름이 다리.</li>
+    <li><b>장소성</b> — 사라진 마을이라 ‘보존’ 아닌 ‘재현’. 정거장을 걷는 구조.</li>
+    <li><b>디지털 트윈</b> — 현재 용지동 + 1950·60년대 마을을 한 겹 덧씌움.</li>
+    <li><b>영혼</b> — 몽환포영·십우도·지금 여기. 매체가 곧 메시지.</li>
+    <li><b>세계(절제)</b> — USIS는 전 세계 같은 기계의 한 지점. 비교는 공기처럼만.</li>
+  </ul>
+
+  <h2><span class="num">3</span>프로듀싱 맵</h2>
+  <div class="map">
+    <div class="box anchor"><div class="bt">기준점 복기</div><div class="bs"><code>AAG-DIR</code> 매 호 먼저 본다 — 불변 닻</div></div>
+    <div class="arr">▼</div>
+    <div class="box"><div class="bt">풀 · 구글드라이브</div><div class="bs">자료를 모으면 <code>AAG-VAR</code>가 빌리지 6카테고리로 분류</div></div>
+    <div class="arr">▼ &nbsp; 뽑아내기 &nbsp; ▼</div>
+    <div class="split">
+      <div class="box"><div class="bt">상시 · 옴니</div><div class="bs">매 호 뉴스릴 종합</div></div>
+      <div class="box"><div class="bt">특별 · 이벤트</div><div class="bs">트리거 점화 시</div></div>
+    </div>
+    <div class="arr">▼</div>
+    <div class="box"><div class="bt">생산 → 마감 → 발행 → 응답</div><div class="bs">ARC·DOC·MED·VAR·VOX·REF → PUB·CHK → 블로그·유튜브·PPT → CON</div></div>
+    <div class="loopnote">↺ 응답이 다시 기준점으로 — 마을이 자란다</div>
+    <div class="side">
+      <div class="box"><div class="bt">병렬 빌드</div><div class="bs"><code>AAG-DT</code> 트윈 · <code>AAG-DECK</code> 발표</div></div>
+      <div class="box"><div class="bt">세계와 만날 때</div><div class="bs"><code>AAG-TRA</code> 통변</div></div>
+    </div>
+  </div>
+
+  <h2><span class="num">4</span>에이전트 13 — AAG</h2>
+  <p class="small"><span class="mk">초록=내가 만듦</span> · <span class="ex">갈색=실행은 촌장/외부</span>. 코어 4 + 모듈 + 신설 VAR + 확장.</p>
+  <div class="card" style="padding:6px 16px;">
+    <div class="ag"><div class="c">AAG-DIR</div><div class="d">조율·총괄 — 기준점 복기, 주제 선정, 상시/특별 결정, 호출</div></div>
+    <div class="ag"><div class="c">AAG-ARC</div><div class="d">사료·고증 — 사실·연표·출처</div></div>
+    <div class="ag"><div class="c">AAG-VAR</div><div class="d">영상아카이브 — KOFA·KMDb·근현대영상아카이브 검색→이슈분석→6카테고리 분류→자료카드 <span class="ex">(재생·다운로드는 밖)</span></div></div>
+    <div class="ag"><div class="c">AAG-DOC</div><div class="d">기억 글 — 1인칭 본문·성찰·캡션 (현재형)</div></div>
+    <div class="ag"><div class="c">AAG-MED</div><div class="d">미디어 — 이미지 프롬프트·영상 구성안 <span class="ex">(생성·편집은 밖)</span></div></div>
+    <div class="ag"><div class="c">AAG-VOX</div><div class="d">목소리 — 채집·전사·스크립트·모사 설계 <span class="ex">(녹음·합성은 밖)</span></div></div>
+    <div class="ag"><div class="c">AAG-REF</div><div class="d">성찰 — 몽환포영·지금 여기 한 조각</div></div>
+    <div class="ag"><div class="c">AAG-PUB</div><div class="d">발행 — 블로그·유튜브 패키지·제목·찾기 후크 <span class="ex">(업로드는 촌장)</span></div></div>
+    <div class="ag"><div class="c">AAG-CHK</div><div class="d">경계 — 기억vs각색·저작권·사생활·적정성 (매 호 마지막 관문)</div></div>
+    <div class="ag"><div class="c">AAG-CON</div><div class="d">연락 — 응답 응대·기록·관계 (상대는 주인)</div></div>
+    <div class="ag"><div class="c">AAG-DT</div><div class="d">디지털 트윈 — 유니티 설계·고증노트. 현상실→건물→빌리지→상남면 <span class="ex">(빌드는 밖)</span></div></div>
+    <div class="ag"><div class="c">AAG-DECK</div><div class="d">발표 — 촌장 강연 PPT</div></div>
+    <div class="ag"><div class="c">AAG-TRA</div><div class="d">통변 — 영문·NARA·국무성 <span class="small">(세계와 만날 때)</span></div></div>
+  </div>
+
+  <h2><span class="num">5</span>한 호 사이클 · 발행 리듬</h2>
+  <p><b>사이클:</b> DIR(기준점·주제) → ARC/VAR(자료) → DOC(본문)·MED(이미지)·REF(성찰) → PUB(묶기) → CHK(경계) → 발행 → CON(응답). 바쁜 호는 <code>DOC→CHK</code>만으로도.</p>
+  <p><b>리듬:</b> 지금 <b>매달</b> → 자료 흐르면 <b>격주</b> → 2027.6.1 가까우면 <b>매주</b>. (신호 둘이면 한 칸 당김)</p>
+
+  <h2><span class="num">6</span>특별 트리거 <span class="small">(열려 있음 · 계속 추가)</span></h2>
+  <ul>
+    <li>찾기 응답 도착 → 그 인물 특집</li>
+    <li>기념일(6.1 등)</li>
+    <li>자료 무더기(VAR가 한 카테고리에 자료 쏟을 때)</li>
+    <li>외부 협업(창원시·KOFA·국무성)</li>
+    <li><span class="small">＋ 새 트리거는 언제든 추가</span></li>
+  </ul>
+
+  <h2><span class="num">7</span>폴더트리 (구글드라이브)</h2>
+  <pre>걸어간_발자취/
+&#9500; 00_기준점/        # 운영체계 확정본 · 이 맵 · 표기 통일
+&#9500; 01_자료_사료/     # 필름 · 사진/지도 · 증언 · 문헌  (VAR가 다룸)
+&#9500; 02_이야기/        # 인물 · 정거장_대본 · 연표(1952.5.16→1967.6.1)
+&#9500; 03_트윈_세트/     # 현상실→건물→빌리지→상남면 · 고증노트
+&#9500; 04_목소리_사운드/ # 실제음성 / 재현음성 (구분)
+&#9500; 05_공개_연재/     # 블로그·유튜브·HTML·PPT
+&#9492; 99_경계_체크/     # AAG-CHK 통과 기록</pre>
+
+  <h2><span class="num">8</span>경계 — 성상실(省相實)</h2>
+  <ul>
+    <li>지어낸 장면을 사실처럼 쓰지 않기 — 기억과 각색의 선</li>
+    <li>실존 인물 이름·사진은 동의 후 (친구는 이름만)</li>
+    <li>KOFA·필름 출처·이용범위 명기 — 저작권</li>
+    <li>아이가 봐도 되는가 — 적정성</li>
+  </ul>
+
+  <h2><span class="num">9</span>오늘까지 만든 것</h2>
+  <ul>
+    <li><span class="done">✓</span> 첫 호 — <b>리버티뉴스는 다시 시작된다</b> (HTML, 서명·연락처 완성)</li>
+    <li><span class="done">✓</span> 운영체계 확정본 (에이전트·사이클·리듬·폴더트리)</li>
+    <li><span class="done">✓</span> 뉴스룸 작업 콘솔 (15단계·라이트테이블·엔진바·프로듀서맵·라이브)</li>
+    <li><span class="done">✓</span> 이 프로듀싱 맵 기록 (260620)</li>
+    <li>대기 — 콘솔에 <b>조종석·AAG-VAR</b> 반영 / 옴니 창간호 본문 / 트윈 ‘현상실’ 첫 스펙</li>
+  </ul>
+  <p class="small">참고 자산: 블로그 <code>jbyoonnav</code> ‘리버티뉴스_상남공보원_뮤지엄’(27편, 친구들스토리·황의순 인터뷰·거쳐간 인물들·NARA 영상자료) · 드라이브 ‘아이들을 찾습니다’ 음성 · 146 관사마을 기억 기록.</p>
+
+  <h2><span class="num">10</span>다음 한 걸음</h2>
+  <p>① 콘솔에 조종석·VAR 반영 &nbsp;② <code>AAG-DOC</code>로 옴니 창간호 ‘현상실’ 정거장 본문 &nbsp;③ <code>AAG-DT</code>로 현상실 한 칸 트윈 스펙. — 부르고 싶을 때 이름만.</p>
+
+  <h2><span class="num">11</span>길동무 문답 — 대화의 길</h2>
+  <div class="dia">
+    <p class="lead">따라오는 이에게 — 이런 대화로 이런 결과가 나왔구나, 나도 이렇게? 누군가의 빅퀘스천을 위한 바램이자 기도문. (키워드 3줄: 나의 물음 · Cl의 응답 · 그 씨앗)</p>
+  <div class="qa"><div class="me"><b>나›</b> 전체 틀·형식? 사실·기억·시대·장소·관점·뉴스·드라마·인물</div><div class="cl"><b>Cl›</b> 세 층위로 분리 — 축·화법·현재성. ‘왜 지금’이 핵심</div><div class="seed"><b>씨›</b> 뒤엉킨 목록 → 세 축</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 세계 속 한국, 같은 시대 동일 조직, 기술자·가족 비교</div><div class="cl"><b>Cl›</b> USIS=전 세계 같은 기계의 한 지점. 김기영→칸→봉준호</div><div class="seed"><b>씨›</b> 비교 = 보편성</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 냉전 프레임 빼고 순수 평론·기억 중심</div><div class="cl"><b>Cl›</b> 냉전은 밀어내고, 평론·기억은 끌어당김. 공감은 구체에서</div><div class="seed"><b>씨›</b> 필름이 다리</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 용지리 특정장소 재현, 국무성+창원시 마을 초석</div><div class="cl"><b>Cl›</b> 원 마을 사라짐 → 재현. 용지못·문화벨트·용 전설</div><div class="seed"><b>씨›</b> 시각 재현 = 청사진</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 사이버 마을·디지털 트윈 입체 세트</div><div class="cl"><b>Cl›</b> 3D는 껍데기, 기억·평론을 실어야. 정거장·걸음=서사</div><div class="seed"><b>씨›</b> 트윈에 옛 마을 덧씌움</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 성상실·무심즉심현행·지금여기·HHI·아이들에게</div><div class="cl"><b>Cl›</b> 뉴스영화가 ‘지금’을 박제. 경이. 길동무 액자</div><div class="seed"><b>씨›</b> 걸어간 발자취 = 지금 한 걸음</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 소나기마을의 사이버판, 유튜브 방식 따라</div><div class="cl"><b>Cl›</b> 한 이야기의 감정을 공간으로. 우리도 ‘소나기’ 한 편 필요</div><div class="seed"><b>씨›</b> 여우비 / 몽환포영</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 빌드인퍼블릭 연재, 영상 드라이브에 올려 읽을까</div><div class="cl"><b>Cl›</b> 빌린 옷 갈아입기. 영상 못 봄→자막·캡처. 드라이브=작업실</div><div class="seed"><b>씨›</b> 못 하는 것의 선</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 김종회처럼 윤정배 촌장이, 작은 토지, 목소리 재현</div><div class="cl"><b>Cl›</b> 촌장-화자(안에서). 평사리=용지리. 실제/재현 구분</div><div class="seed"><b>씨›</b> 화자의 자격</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 나-재순-덕길-수용, 상남 친구들</div><div class="cl"><b>Cl›</b> 집 대문 생김. 네 눈높이로 큰 역사를. 인물=길</div><div class="seed"><b>씨›</b> 떠나는 아이?</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 1967.6 그 아침, 다 떠나고 우리만, 부모 침묵</div><div class="cl"><b>Cl›</b> 떠난 건 마을, 남은 게 너. 마지막 한 사람=촌장</div><div class="seed"><b>씨›</b> 그 아침 전 골목을 다시</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 지금여기 시점, 기준점·꼭지·프레임·스키마·폴더트리</div><div class="cl"><b>Cl›</b> 지금여기=시점을 없앰. 작업 프레임워크 문서</div><div class="seed"><b>씨›</b> 그릇이 섰다</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 2027.6.1 공개, 마지막회 다음회로, 공동작업이 뉴스</div><div class="cl"><b>Cl›</b> D-day 정렬. 공동작업 = 오늘의 리버티뉴스</div><div class="seed"><b>씨›</b> 60년 공백을 잇다</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 친구들 작은 만남, 다시 시작, 지금여기</div><div class="cl"><b>Cl›</b> 흩어진 아이들 다시 모임. 시간이 접힘</div><div class="seed"><b>씨›</b> 그 한 컷 = 과녁</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 실제모임 or 가상만남</div><div class="cl"><b>Cl›</b> 블로그·유튜브=찾는 그물. 닿으면 실제, 못 닿으면 가상</div><div class="seed"><b>씨›</b> 겹침이 완성</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 드라이브·블로그 검색</div><div class="cl"><b>Cl›</b> 146 기억·‘아이들 찾는’ 음성·블로그 뮤지엄 발견</div><div class="seed"><b>씨›</b> 상상이 기억으로</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 첫글 만들자</div><div class="cl"><b>Cl›</b> ‘아이들을 찾습니다’ 첫 호. md→html</div><div class="seed"><b>씨›</b> 첫 벽돌</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 여우비마을 촌장 윤정배, Yeoubi(Sunshower·USIS Liberty News)</div><div class="cl"><b>Cl›</b> 직함·서명 완성</div><div class="seed"><b>씨›</b> 우리 이름</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 운영체계, AAG-xx 작업중심, 코어4+모듈3</div><div class="cl"><b>Cl›</b> 확정본. 작업이 곧 에이전트</div><div class="seed"><b>씨›</b> 스키마 고정</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 작업 GUI 3패널, 엔진바·프로듀서맵·라이브</div><div class="cl"><b>Cl›</b> 뉴스룸 콘솔(현상실 다크룸)</div><div class="seed"><b>씨›</b> 엔진룸이 섰다</div></div>
+  <div class="qa"><div class="me"><b>나›</b> KOFA AG, 조종석·기준점 복기·상시/특별·트리거</div><div class="cl"><b>Cl›</b> AAG-VAR 신설, 조종석</div><div class="seed"><b>씨›</b> 13엔진 + 조종석</div></div>
+  <div class="qa"><div class="me"><b>나›</b> 이 맵 자세히 기록 + 길동무 문답</div><div class="cl"><b>Cl›</b> 여우비뉴스마을맵-260620</div><div class="seed"><b>씨›</b> 따라올 이를 위한 질문지</div></div>
+    <p class="grow">이 길은 매 세션 한 마디씩 자란다.</p>
+  </div>
+
+  <div class="pub">
+    <div class="who">여우비마을 · Yeoubi (Sunshower · USIS Liberty News) Village</div>
+    <div class="sub">발행 · 촌장 윤정배</div>
+    <a href="mailto:jbyoongoo@gmail.com">jbyoongoo@gmail.com</a> &nbsp;·&nbsp; <a href="https://m.blog.naver.com/jbyoonnav">여우비마을 블로그</a><br><br><a href="https://jbyoongoo.github.io/liberty_sangnam/find.html" style="display:inline-block;margin-top:4px;">▶ 첫 글 · 아이들을 찾습니다</a>
+  </div>
+
+  <p class="closing">같은 듯 다른 듯, 여러분의 본분사(本分事)를 응원합니다.</p>
+  <p class="principle">그때도 지금. 지금도 지금.</p>
+  <p class="nowhere">지금, 여기에서.</p>
+  <p class="endorse"><b>새물결 청년원</b>(유네스코 청년원 3.0)의 미래세대 영청(永靑)의 <b>우주청년 일일일생(一日一生)을 염원합니다.</b></p>
+
+</div>
+</body>
+</html>
