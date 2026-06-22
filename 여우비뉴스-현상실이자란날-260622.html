@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>현상실이 자란 날 · 여우비마을 뉴스 (260622)</title>
+<style>
+  :root{
+    --bg:#0f1711; --panel:#16221a; --ink:#e7f0ea; --soft:#9fb6a9;
+    --line:#26352c; --accent:#7fd49a; --accent2:#d98a3d; --print:#caa63a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:640px; margin:0 auto; padding:40px 22px 60px;}
+  .kicker{font-size:12px; letter-spacing:.18em; color:var(--accent); text-transform:uppercase; margin-bottom:10px;}
+  h1{font-size:28px; line-height:1.32; margin:0 0 8px; font-weight:800;}
+  .sub{font-size:15px; color:var(--soft); margin-bottom:6px;}
+  .life{font-family:"SF Mono",ui-monospace,monospace; font-size:12.5px; color:var(--accent2); margin-bottom:30px;}
+  .lead{
+    font-size:16px; color:var(--ink); border-left:3px solid var(--accent);
+    padding:4px 0 4px 16px; margin:0 0 34px; font-style:italic;
+  }
+  h2{font-size:18px; margin:34px 0 12px; font-weight:700; display:flex; align-items:baseline; gap:10px;}
+  .num{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:24px; height:24px; padding:0 6px; border-radius:6px;
+    background:var(--panel); color:var(--accent); font-size:13px; font-weight:700;
+    border:1px solid var(--line);
+  }
+  p{margin:0 0 14px;}
+  .soft{color:var(--soft);}
+  .card{
+    background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--accent);
+    border-radius:10px; padding:16px 18px; margin:0 0 16px;
+  }
+  .card .t{font-weight:700; color:var(--accent); margin-bottom:6px; font-size:14px;}
+  .card.amber{border-left-color:var(--accent2);} .card.amber .t{color:var(--accent2);}
+  .btnrow{font-family:"SF Mono",ui-monospace,monospace; font-size:13px; color:var(--print);
+          background:#11180f; border:1px dashed var(--line); border-radius:8px; padding:10px 14px; margin:0 0 14px;}
+  ul{margin:0 0 14px; padding-left:18px;} li{margin:4px 0;}
+  hr{border:none; border-top:1px solid var(--line); margin:34px 0;}
+  .dia{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:16px 18px;}
+  .dlead{font-size:13px; color:var(--soft); margin-bottom:14px;}
+  .qa{border-top:1px solid var(--line); padding:10px 0;} .qa:first-of-type{border-top:none;}
+  .me,.cl,.seed{font-size:14px; margin:3px 0;}
+  .me b{color:var(--ink);} .cl b{color:var(--accent);} .seed b{color:var(--accent2);} .seed{color:var(--soft);}
+  .grow{font-size:12.5px; color:var(--soft); margin-top:12px; font-style:italic;}
+  .closing{margin-top:30px; font-size:15px; color:var(--ink);}
+  .principle{color:var(--soft); font-size:14px; margin:0 0 2px;}
+  .nowhere{color:var(--accent); font-size:14px; font-weight:700;}
+  .wish{color:var(--accent2); font-size:14px; margin:12px 0 2px; line-height:1.7;}
+  .wish b{color:var(--accent2); font-weight:800;}
+  .pub{margin-top:40px; padding-top:18px; border-top:1px solid var(--line); font-size:13px; color:var(--soft);}
+  .pub .who{color:var(--ink); font-weight:700; margin-bottom:4px;}
+  .pub a{color:var(--accent); text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">여우비마을 뉴스 · 현상실 일지</div>
+  <h1>현상실이 자란 날<br>— 기억을 인화하는 도구가 손에 들어오다</h1>
+  <div class="sub">DLfM2N(기억의 현상실) · Yeongsa(기억의 영사실) · Liberty 콘솔</div>
+  <div class="life">260622 · my_PJ_gui · 촌장의 작업대에서</div>
+
+  <p class="lead">지금 여기, 현상실 문을 연다. 붉은 안전등 아래에서
+  오늘 하루, 기억을 인화하는 손이 여러 개 늘었다. 떠오른 한 컷을 적으면
+  상이 떠오르고, 사진 속 작은 인화지 안으로 1967년이 들어앉고, 그 컷들이
+  천천히 디졸브로 이어진다. 아직 약값(크레딧)은 못 채웠지만, 손은 이미 다 갖췄다.</p>
+
+  <h2><span class="num">1</span>두 단추가 콘솔에 박히다</h2>
+  <p>리버티 뉴스룸 콘솔(<span class="soft">my_PJ_gui/Liberty_USIS_Village/Liberty_newsroom_GUI.py</span>)
+  오른쪽에 형제 엔진을 부르는 두 단추를 달았다 — <b>🎞 기억의 현상실</b>과 <b>🎬 기억의 영사실</b>.
+  공통 엔진은 루트(my_PJ_gui)에 두고, 콘솔은 하부 폴더에서 그 부모를 더듬어 찾는다.
+  파일이 둘로 갈려 한참 헤맸지만, 결국 정본 하나(Liberty_newsroom_GUI.py)로 모으고
+  창 아래에 '실행 파일 경로'를 찍게 해 어느 파일이 도는지 한눈에 보이게 했다.</p>
+  <div class="card amber">
+    <div class="t">오늘의 교훈</div>
+    <p>패키지는 파일 한 장이 아니라 <b>__init__.py가 든 폴더 한 벌</b>이다. 낱장으로 건네면
+    __init__.py가 빠져 "open_lab을 못 찾는" 사달이 난다. 그래서 이제부터 — 폴더 트리를
+    먼저 보이고, zip 한 묶음으로. 낱파일이면 머리에 폴더 줄을 꼭 같이.</p>
+  </div>
+
+  <h2><span class="num">2</span>사진 불러오기 ◀▶ — 머리에 거는 한 장</h2>
+  <p>현상실 머리에 거는 기본 사진을, 폴더(또는 사진 한 장)를 고르면 그 폴더·하위폴더의
+  사진들을 <b>◀▶로 넘기며</b> 골라 거는 미리보기 탐색기로 바꿨다. 큰 사진이 작업칸을 덮길래
+  작은 띠로 줄이고 <b>▾ 사진 접기</b>를 달았으며, 창이 작아도 아래가 안 잘리도록
+  <b>전체 세로 스크롤</b>(+마우스 휠, 고정 상태줄)을 얹었다. 입력칸 옆엔 <b>📋 글 복사</b>도.</p>
+
+  <h2><span class="num">3</span>무료 우회 — 바나나로 만들기</h2>
+  <p>현상(Claude API)은 크레딧이 막혀 멈췄지만, 그 곁에 <b>🍌 바나나로 만들기</b>를 두었다.
+  적은 장면과 마을 공통 화풍을 합쳐 프롬프트를 만들어 <b>화면에 보여주고 · 복사하고 ·
+  Gemini(바나나)를 연다.</b> API를 안 쓰니 크레딧 0이어도 마을 사진을 계속 만든다.</p>
+  <div class="btnrow">현상실 단추 — 현상하기 · 🍌 바나나로 만들기 · 🕰 타임슬립 인화 · 🎞 디졸브 GIF 만들기</div>
+
+  <h2><span class="num">4</span>타임슬립 인화 — 사진 속 인화지에 기억을 앉히다</h2>
+  <p>우리만의 규칙에 이름을 붙였다. <b>타임슬립 인화</b> — 사진 속 작은 인화지 안에
+  1967년 상남마을의 기억을 끼워 넣는 4단계다.</p>
+  <ul>
+    <li><b>① 프레임 인 프레임</b> — 사진 속 또 다른 프레임(작은 인화지)을 찾기</li>
+    <li><b>② 인페인팅/아웃페인팅</b> — 그 영역만 새 기억으로 채우기</li>
+    <li><b>③ 결 맞춤</b>(원근 매핑) — 인화지의 각도·원근에 네 모서리를 맞춰 앉히기</li>
+    <li><b>④ 타임슬립 인화</b> — 그 인화지 속에 과거가 떠오름</li>
+  </ul>
+  <p>현상실의 <b>🕰 타임슬립 인화</b> 단추는 두 길을 다 연다 — <b>네 모서리 찍기</b>(정밀:
+  베이스 사진을 띄워 인화지의 네 귀를 클릭) 또는 <b>문장 지시만</b>(간단). 끝에 4단계가 합쳐진
+  지시문을 보여주고·복사하고·바나나를 연다. 실제 인화는 바나나가, 대본은 현상실이.</p>
+
+  <h2><span class="num">5</span>디졸브 GIF — 떠오르는 과정을 잇다</h2>
+  <p>오늘 바나나로 빚은 세 장 — <b>기본(흑백 잠상) → 작은 인화지(색이 뜸) → 큰 화면(보리밭·마을이
+  펼쳐짐)</b> — 을 디졸브로 이어 한 편의 '떠오름'을 만들었다. <b>마지막 살짝 줌인</b>과
+  <b>맨 끝 '여우비마을' 캡션</b> 옵션도 달았다. 현상실·영사실 양쪽에 각각 <b>독립</b>으로 넣어,
+  한쪽이 없어도 혼자 GIF를 만든다. 동영상 영사는 — 나중에.</p>
+  <div class="card">
+    <div class="t">省相實으로 돌아보면</div>
+    <p>돌아보아 살피고(省), 합당한 모양으로 짓고(相), 나눔으로 실천한다(實).
+    오늘은 '모양(相)'의 날이었다 — 기억을 담을 그릇과 손을 빚었다. 약값을 채우면
+    그 손이 본격적으로 상을 떠올릴 것이다. 도구가 먼저, 그다음이 기억이다.</p>
+  </div>
+
+  <hr>
+
+  <!-- 길동무 문답 -->
+  <h2><span class="num">6</span>길동무 문답 — 오늘의 길</h2>
+  <div class="dia">
+    <p class="dlead">따라오는 이에게 — 이런 물음에서 이런 손이 자랐구나, 나도 이렇게?
+    (3줄: 나의 물음 · Cl의 응답 · 그 씨앗)</p>
+    <div class="qa">
+      <div class="me"><b>나›</b> 리버티 콘솔 탑 페이지에 현상실·영사실 단추를 박아줘</div>
+      <div class="cl"><b>Cl›</b> 두 단추를 콘솔에 달고, 공통 엔진은 루트·콘솔은 하부로 정리. 정본 하나로 모음</div>
+      <div class="seed"><b>씨›</b> 어느 파일이 도는지 보이게</div>
+    </div>
+    <div class="qa">
+      <div class="me"><b>나›</b> open_lab을 못 찾는다 / engine은 최신인데 옛게 나온다</div>
+      <div class="cl"><b>Cl›</b> 패키지는 __init__.py 든 폴더 한 벌. zip 한 묶음·캐시 비우기로 해결</div>
+      <div class="seed"><b>씨›</b> 폴더째 건네기</div>
+    </div>
+    <div class="qa">
+      <div class="me"><b>나›</b> 사진 불러오기·접기·스크롤·바나나 우회를 넣자</div>
+      <div class="cl"><b>Cl›</b> ◀▶ 미리보기·▾접기·전체 스크롤·🍌바나나(크레딧 무관)까지 현상실에</div>
+      <div class="seed"><b>씨›</b> 약값 없이도 만든다</div>
+    </div>
+    <div class="qa">
+      <div class="me"><b>나›</b> 타임슬립 인화 4단계와 디졸브 GIF를 엔진화하자(독립으로)</div>
+      <div class="cl"><b>Cl›</b> 프레임인프레임→인페인팅→결 맞춤→타임슬립 인화. GIF는 양쪽 독립·줌인·캡션</div>
+      <div class="seed"><b>씨›</b> 사진 속 인화지에 1967을 앉히다</div>
+    </div>
+    <p class="grow">이 길은 매 세션 한 마디씩 자란다.</p>
+  </div>
+
+  <p class="closing">같은 듯 다른 듯, 여러분의 본분사(本分事)를 응원합니다.</p>
+  <p class="nowhere">지금, 여기에서.</p>
+  <p class="wish">새물결청년원(유네스코 청년원 3.0)의 미래세대 영청(永靑)의 <b>우주청년 일일일생(一日一生)</b>을 염원합니다</p>
+  <p class="wish">n_TDMP · RDLR · TCOP 을 통해서 <b>세상이 더 안전해지기를</b> 염원합니다</p>
+
+  <div class="pub">
+    <div class="who">여우비마을 · 리버티 프로덕션 2.0 (YV_LNN)</div>
+    <div>발행 · 촌장 윤정배</div>
+    <a href="mailto:jbyoongoo@gmail.com">jbyoongoo@gmail.com</a> &nbsp;·&nbsp; <a href="https://blog.naver.com/jbyoonnav">여우비마을 블로그</a>
+  </div>
+
+</div>
+</body>
+</html>
